@@ -1,0 +1,112 @@
+\documentclass[
+    10pt,
+    toc = bib,
+    headsepline,
+    chapterprefix = true,
+    headings = small,
+    parskip = never,
+]{scrbook}
+\usepackage[T2A, T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian, english]{babel}
+\usepackage[
+    paper = a5paper,
+    top = 2.5cm,
+    left = 2.5cm,
+    right = 1.5cm,
+    bottom = 1.8cm,
+    footskip = 1.8cm
+]{geometry}
+\usepackage{times}
+\setkomafont{disposition}{\bfseries}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=2\baselineskip]{chapter}
+\setkomafont{chapterprefix}{\usekomafont{section}}
+
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\bfseries}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label = (\roman*)}
+
+\usepackage{xcolor}
+\definecolor{azure}{RGB}{0, 127, 255}
+\definecolor{violet}{RGB}{161, 11, 112}
+\definecolor{orange}{RGB}{243, 119, 53}
+
+
+
+% custom header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{scrlayer-scrpage}
+\ofoot*{}
+\ohead[]{\pagemark}
+\ihead{\headmark}
+\setkomafont{pageheadfoot}{\small}
+
+
+
+% miscellaneous packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{lscape} %\usepackage{pdflscape}
+
+
+
+% mathematics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{cleveref} % bc autoref does not work with shared counter
+\usepackage{bm, dsfont} % cool bold symbols and cool double stroke symbols
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\transp}{^{\mathsf T}}
+\newcommand{\inv}{^{-1}}
+\renewcommand{\qedsymbol}{\hspace*{0ex} \hfill \rule{1.5ex}{1.5ex} \newline}
+\newcommand{\Hmix}{H_{\text{mix}}}
+\newcommand{\Xmz}{\bm X_{\mathrm{\tiny{MZ}}}}
+\newcommand{\Wmz}{\bm W_{\mathrm{\tiny{MZ}}}}
+\newcommand{\Imz}{I_{\mathrm{\tiny{MZ}}}}
+\newcommand{\Vmz}{V_{\mathrm{\tiny{MZ}}}}
+
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\signum}{sgn}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\cv}{CV}
+
+
+
+% general information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Least Squares Rocks}
+\author{Felix~Bartel}
+\date{sometime}
+
+
+
+\usepackage{lipsum}
+\begin{document} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+    \centering
+    \input{img/}
+    \caption{Caption.}
+\end{figure}
+\lipsum[1]
+\end{document} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
